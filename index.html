@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d12">
+  <title>MADA JOBS — Travaillez, gagnez, réussissez</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="top"><a class="brand" href="#">MADA<span>JOBS</span></a><nav><a href="#missions">Missions</a><a href="#wallet">Portefeuille</a><a href="#entreprises">Entreprises</a></nav><button id="logout" class="ghost hidden">Déconnexion</button></header>
+<main>
+<section class="hero"><div><p class="eyebrow">OPPORTUNITÉS À MADAGASCAR</p><h1>Travaillez.<br><span>Gagnez.</span> Réussissez.</h1><p>Des missions claires, un portefeuille transparent et un espace dédié aux entreprises.</p></div><div class="hero-card"><small>SOLDE DISPONIBLE</small><strong id="balance">— Ar</strong><span id="session-state">Connectez-vous pour accéder à votre espace.</span></div></section>
+<section class="panel auth" id="auth"><div><h2>Créer un compte</h2><input id="name" placeholder="Nom complet"><input id="email" type="email" placeholder="Adresse e-mail"><input id="password" type="password" placeholder="Mot de passe (6 caractères minimum)"><select id="account-type"><option value="user">Compte utilisateur</option><option value="business">Compte entreprise</option></select><div class="actions"><button id="signup">S'inscrire</button><button id="login" class="secondary">Se connecter</button></div></div><p class="muted">Inscription par e-mail et mot de passe. La confirmation e-mail dépend des réglages Supabase.</p></section>
+<section class="grid hidden" id="dashboard">
+ <article class="panel"><h2>Tableau de bord</h2><div class="stats"><div><b id="done">0 / 5</b><small>Tâches aujourd'hui</small></div><div><b id="earned">0 Ar</b><small>Gains approuvés</small></div></div><p class="muted">Les gains de mission sont crédités après validation par l'administration.</p></article>
+ <article class="panel" id="wallet"><h2>Portefeuille</h2><p>Retrait minimum : <b>10 000 Ar</b></p><input id="withdraw-amount" type="number" min="10000" placeholder="Montant en Ariary"><select id="withdraw-method"><option value="mvola">MVola</option><option value="orange">Orange Money</option><option value="airtel">Airtel Money</option></select><input id="withdraw-phone" placeholder="Numéro de paiement"><button id="withdraw">Demander un retrait</button><p class="muted">Les demandes sont soumises à validation administrative. Aucun paiement réel n'est exécuté par ce site seul.</p></article>
+ <article class="panel" id="missions"><h2>Missions disponibles</h2><div id="task-list">Chargement des missions…</div></article>
+ <article class="panel"><h2>Parrainage</h2><p>Votre code : <b id="ref-code">—</b> <button id="copy-code" class="secondary">Copier</button></p><input id="ref-input" placeholder="Code reçu"><button id="apply-ref">Valider un code</button><p class="muted">Prime de 500 Ar pour le parrain après validation du code. Prévention des auto-parrainages et doublons.</p></article>
+</section>
+<section class="panel" id="entreprises"><h2>Espace entreprises</h2><p>Les entreprises peuvent créer des campagnes sponsorisées après configuration et validation du financement par l'administration.</p><p class="muted">Le formulaire de campagne et le paiement en ligne nécessitent un prestataire de paiement et une configuration serveur vérifiée.</p></section>
+<section class="panel"><h2>Espace administratif</h2><p>Les opérations d'administration sont réservées aux comptes explicitement ajoutés à <code>admin_roles</code> dans Supabase. Ne jamais donner le rôle admin depuis le navigateur.</p></section>
+<div id="notice" role="status"></div>
+</main><footer>MADA JOBS · Madagascar · Conditions et paiements à valider avant lancement public</footer>
+<script src="js/config.js"></script><script src="js/app.js"></script>
+</body></html>
